@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>鼠標事件對象屬性</title>
+    <style>
+        #box{
+            width:200px;
+            height:200px;
+            background-color:red;
+            position:fixed;
+        }
+    </style>
+</head>
+<body style="height:2000px;">
+    <div id="box"></div>
+    <script type="text/javascript">
+        //座標位置
+
+        //事件對象中提供了：clientX/Y,x/y,offsetX/Y,screenX/Y,pageX/pageY
+        var box = document.getElementById('box');
+        box.onmousemove = function(e){
+            e = e || window.event;
+            //clientX/Y和x/y:相對於瀏覽器(瀏覽器有效區域)的X軸和y軸
+            //this.innerHTML = `clientX:${e.clientX};clientY:${e.clientY};X:${e.X};Y:${e.Y};`;
+            //screenX/Y:相對於顯示器螢幕的X軸和Ｙ軸
+            //this.innerHTML = `screenX:${e.screenX};screenY:${e.screenY};`;
+            //pageX/Y:相對於頁面的X軸和Y軸
+            //this.innerHTML = `pageX:${e.pageX};pageY:${e.pageY};`;
+            //offsetX/Y:相對於事件源的X軸和Y軸
+            this.innerHTML = `offsetX:${e.offsetX};offsetY:${e.offsetY};`;
+
+        }
+    </script>
+
+    
+</body>
+</html>
